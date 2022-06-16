@@ -1,0 +1,30 @@
+    body {
+        margin: 0;
+        background-color: #202020;
+    }
+    
+    .board-container {
+        width: 80vw;
+        height: 40vw;
+        background-color: white;
+        margin: calc(50vh - 20vw) auto;
+        position: relative;
+    }
+    
+    .paddle {
+        width: 2vw;
+        height: 10vw;
+        background-color: #202020;
+        position: absolute;
+        top: 15vw;
+    }
+    
+    .paddle.player-1 {
+        left: 0;
+        background-color: #0000ff;
+    }
+    
+    .paddle.player-2 {
+        right: 0;
+        background-color: #ff0000;
+    }
