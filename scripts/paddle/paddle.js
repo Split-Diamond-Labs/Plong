@@ -5,15 +5,23 @@ let paddle1 = {
     y: 20,
     xDir: 0,
     yDir: 0,
-    mass: 10
+    mass: 10,
+    ballCollision: {
+        x: 0,
+        y: 0
+    }
 }
 
 let paddle2 = {
-    x: 0,
+    x: 80,
     y: 20,
     xDir: 0,
     yDir: 0,
-    mass: 10
+    mass: 10,
+    ballCollision: {
+        x: 0,
+        y: 0
+    }
 }
 
 let keysPressed = {
@@ -47,24 +55,24 @@ function updatePaddle() {
     if (paddle2.y < 5 || paddle2.y > 35) paddle2.yDir = -paddle2.yDir;
 
     // Paddle-on-paddle collision
-    if (Math.abs(paddle1.y - paddle2.y) < 10 && Math.abs(paddle1.x + paddle2.x - 80) < 2) {
+    if (Math.abs(paddle1.y - paddle2.y) < 10 && Math.abs(paddle1.x - paddle2.x) < 2) {
         tempDir = paddle1.xDir;
-        paddle1.xDir = -paddle2.xDir;
-        paddle2.xDir = -tempDir;
+        paddle1.xDir = paddle2.xDir;
+        paddle2.xDir = tempDir;
         tempDir = paddle1.yDir;
         paddle1.yDir = paddle2.yDir;
         paddle2.yDir = tempDir;
     }
 
     // Update HTML 
-    document.querySelector(".player-1").style.left = (paddle1.x - 0.5) + "vw";
+    document.querySelector(".player-1").style.left = (paddle1.x - 1) + "vw";
     document.querySelector(".player-1").style.top = (paddle1.y - 5) + "vw";
-    document.querySelector(".player-2").style.right = (paddle2.x - 0.5) + "vw";
+    document.querySelector(".player-2").style.left = (paddle2.x - 1) + "vw";
     document.querySelector(".player-2").style.top = (paddle2.y - 5) + "vw";
 
     // Player 1 Controls 
-    keysPressed["ArrowRight"] ? paddle2.xDir += -paddleAcceleration : (() => {})();
-    keysPressed["ArrowLeft"] ? paddle2.xDir += paddleAcceleration : (() => {})();
+    keysPressed["ArrowLeft"] ? paddle2.xDir += -paddleAcceleration : (() => {})();
+    keysPressed["ArrowRight"] ? paddle2.xDir += paddleAcceleration : (() => {})();
     keysPressed["ArrowUp"] ? paddle2.yDir += -paddleAcceleration : (() => {})();
     keysPressed["ArrowDown"] ? paddle2.yDir += paddleAcceleration : (() => {})();
 

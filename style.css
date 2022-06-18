@@ -28,3 +28,30 @@
         right: 0;
         background-color: #ff0000;
     }
+    
+    .ball {
+        width: 1vw;
+        height: 1vw;
+        background-color: #000000;
+        position: absolute;
+        top: 19.5vw;
+        left: 39.5vw;
+        border-radius: 50%;
+    }
+    
+    h1 {
+        font-size: 10vh;
+        position: absolute;
+        top: 0;
+        text-align: center;
+        width: 100%;
+        font-family: "Lucida Console", Monaco, monospace;
+    }
+    
+    .score1 {
+        color: #0000ff;
+    }
+    
+    .score2 {
+        color: #ff0000;
+    }
