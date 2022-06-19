@@ -3,7 +3,7 @@
         background-color: #202020;
     }
     
-    .board-container {
+    /*.board-container {
         width: 80vw;
         height: 40vw;
         background-color: white;
@@ -37,7 +37,7 @@
         top: 19.5vw;
         left: 39.5vw;
         border-radius: 50%;
-    }
+    }*/
     
     h1 {
         font-size: 10vh;
@@ -55,4 +55,8 @@
     
     .score2 {
         color: #ff0000;
+    }
+
+    canvas {
+        margin: calc(50vh - 300px) calc(50vw - 600px);
     }
