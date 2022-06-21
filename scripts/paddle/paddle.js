@@ -5,7 +5,7 @@ var Engine = Matter.Engine,
     Bodies = Matter.Bodies,
     Composite = Matter.Composite;
 
-const paddleAcceleration = 0.005;
+const paddleAcceleration = 0.015;
 
 let keysPressed = {
     KeyW: false,

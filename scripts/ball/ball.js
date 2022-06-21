@@ -24,16 +24,24 @@ function updateBall(event) {
         ballData.lastHit = 0;
         score.player1++;
         console.log("Player 1 scored");
-        // ball.setAngularVelocity(0);
-        // ball.setVelocity({ x: 0, y: 0 });
-        // ball.setPosition({ x: 600, y: 300 });
+        Matter.Body.setAngularVelocity(ball, 0);
+        Matter.Body.setVelocity(ball, { x: 0, y: 0 });
+        Matter.Body.setPosition(ball, { x: 600, y: 300 });
+        Matter.Body.setAngularVelocity(paddle1, 0);
+        Matter.Body.setVelocity(paddle1, { x: 0, y: 0 });
+        Matter.Body.setPosition(paddle1, { x: 65.5, y: 300 });
+        Matter.Body.setAngle(paddle1, 0);
     } else if (ballData.lastHit == 2 && isEqualOrSomething(bodyA, bodyB, "wallLeft", "ball")) {
         ballData.lastHit = 0;
         score.player2++;
         console.log("Player 2 scored");
-        // ball.setAngularVelocity(0);
-        // ball.setVelocity({ x: 0, y: 0 });
-        // ball.setPosition({ x: 600, y: 300 });
+        Matter.Body.setAngularVelocity(ball, 0);
+        Matter.Body.setVelocity(ball, { x: 0, y: 0 });
+        Matter.Body.setPosition(ball, { x: 600, y: 300 });
+        Matter.Body.setAngularVelocity(paddle2, 0);
+        Matter.Body.setVelocity(paddle2, { x: 0, y: 0 });
+        Matter.Body.setPosition(paddle2, { x: 1134.5, y: 300 });
+        Matter.Body.setAngle(paddle2, 0);
     }
     console.log("Collision between " + bodyA.label + " and " + bodyB.label);
     if (isEqualOrSomething(bodyA, bodyB, "paddle1", "ball")) {
