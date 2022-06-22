@@ -48,7 +48,9 @@ var render = Render.create({
 });
 
 var paddle1 = Bodies.rectangle(16, 300, 30, 150, { frictionAir: 0.1, label: "paddle1" });
+paddle1.render.fillStyle = '#0000FF';
 var paddle2 = Bodies.rectangle(1184, 300, 30, 150, { frictionAir: 0.1, label: "paddle2" });
+paddle2.render.fillStyle = '#FF0000';
 var wallDown = Bodies.rectangle(600, 599.5, 1200, 100, { isStatic: true, label: "wallDown" });
 var wallUp = Bodies.rectangle(600, 0.5, 1200, 100, { isStatic: true, label: "wallUp" });
 var wallLeft = Bodies.rectangle(0.5, 300, 100, 600, { isStatic: true, label: "wallLeft" });
